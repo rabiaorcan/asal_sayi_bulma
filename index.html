@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ile Asal Sayı ve Bölenlerini Bulma</title>
+</head>
+<body>
+
+    <h3>Bitiş Sayısı: <input type="text" id="sayii"></h3> <br>
+    <input type="button" value="Hesapla" onclick="Hesapla()"> <br>
+    <p id="metin"> Asal sayıdır</p>
+
+
+
+
+<script>
+
+var yazi=" ";
+var sayi;
+function Hesapla()
+{
+var sonuc=true;
+var sayac=0;
+sayi=document.getElementById("sayii").value;
+
+for(var i=2; i<Math.floor(sayi/2); i++)
+{
+    if(sayi%i==0)
+    {
+        sayac++;//sayı asal olursa sayac degeri 0 da kalır ornegin 17 degerinde herhangi bolen olmaz sayac 0 kalır ve bu sayı asaldır.
+        //sayac degeri ile sayının bolenlerini almaktayız.
+    }
+}
+if(sayac==0)
+{
+    yazi="sayı asaldır";
+}
+else{
+    yazi="Sayı asal degildir. Kendisi ve 1 haricinde " + sayac + " adet böleni vardır.";
+}
+document.getElementById("metin").innerHTML=yazi;
+}
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
